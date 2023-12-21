@@ -1,0 +1,49 @@
+﻿
+@{
+    Login log = ViewData["login"] as Login;
+
+}
+
+
+@model BootStarp_Passdata.Models.Login;
+
+
+<form method="post">
+<div class="container">
+<div class="row">
+    <div class="col">
+        <label> Username</label>
+    </div>
+    <div class="col">
+        <input asp-for="username" class="form-control"   />
+    </div>
+
+</div>
+<div class="row">
+
+      <div class="col">
+          <lable> Password </lable>
+    </div>
+    <div class="col">
+        <input asp-for="password" class="form-control"/>
+    </div>
+
+</div>
+
+</div>
+<input   type="submit" value="login" class="btn btn-primary"/>
+ <a asp-action="SignUp" asp-controller="User" class="btn btn-link" >  SignUp </a>
+
+</form>
+
+<div class="alert-info">
+    @TempData["Msg"]
+</div>
+
+<p> @ViewBag.login.username</p>
+<p> @ViewBag.login.password</p>
+
+
+
+<p> @log.username</p>
+<p>@log.password</p>
